@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:GestureGame.ViewModels"
+             mc:Ignorable="d"
+             x:Class="GestureGame.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="這裡文字具有手勢點選感應" 
+               FontSize="18">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding TapCommand}" CommandParameter="你點選了文字"/>
+            </Label.GestureRecognizers>
+        </Label>
+        <Image
+            HeightRequest="200" WidthRequest="200"
+            Source="https://us.v-cdn.net/5019960/uploads/FileUpload/a5/fb60d170e280fa71c5c62a40529fc3.jpg">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding TapCommand}" CommandParameter="你點選猴子圖片"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <StackLayout
+            Orientation="Horizontal">
+            <BoxView
+                HorizontalOptions="Start"
+                WidthRequest="130" HeightRequest="130"
+                Color="Red">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding TapCommand}" CommandParameter="你點選了紅色區塊"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView
+                HorizontalOptions="Start"
+                WidthRequest="130" HeightRequest="130"
+                Color="Green">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding TapCommand}" CommandParameter="你點選了綠色區塊"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView
+                HorizontalOptions="Start"
+                WidthRequest="130" HeightRequest="130"
+                Color="Blue">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer
+                    Command="{Binding TapCommand}" CommandParameter="你點選了藍色區塊"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </StackLayout>
+        <Label Text="{Binding Message}"/>
+    </StackLayout>
+
+</ContentPage>
