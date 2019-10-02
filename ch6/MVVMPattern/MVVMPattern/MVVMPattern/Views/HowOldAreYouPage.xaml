@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:MVVMPattern.ViewModels"
+             xmlns:converters="clr-namespace:MVVMPattern.Converters"
+             mc:Ignorable="d"
+             x:Class="MVVMPattern.Views.HowOldAreYouPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:HowOldAreYouViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:AgeToColorConverter x:Key="AgeToColorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label
+            Text="姓名"
+            FontSize="14"/>
+        <Entry
+            Text="{Binding Name}"
+            Placeholder="請輸入你的姓名"
+            />
+        <Label
+            Text="年紀"
+            FontSize="14"/>
+        <Entry
+            Text="{Binding Age}"
+            Placeholder="請輸入你的年紀"
+            Keyboard="Numeric"
+            />
+        <Label
+            Text="心情顏色"
+            FontSize="14"/>
+        <BoxView
+            Color="{Binding Age, Converter={StaticResource AgeToColorConverter}}"
+            WidthRequest="100" HeightRequest="100"
+            HorizontalOptions="Center" VerticalOptions="Start"/>
+        <Button
+            Text="送出"
+            Command="{Binding SendCommand}"
+            />
+        <Label
+            Text="彙總訊息"
+            FontSize="14"/>
+        <Label
+            Text="{Binding Message}"
+            TextColor="HotPink"
+            FontSize="18"/>
+
+    </StackLayout>
+
+</ContentPage>
