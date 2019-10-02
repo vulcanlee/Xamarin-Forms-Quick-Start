@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BindConverter"
+             xmlns:converter="clr-namespace:BindConverter.Converters"
+             mc:Ignorable="d"
+             x:Class="BindConverter.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MyBindingContext/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:StringToBooleanInvertConverter x:Key="StringToBooleanInvertConverter"/>
+            <converter:StringToBooleanConverter x:Key="StringToBooleanConverter"/>
+            <converter:NumberToAlphabetConverter x:Key="NumberToAlphabetConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label
+            FontSize="14"
+            Text="帳號"/>
+        <Entry
+            x:Name="entAccount"
+            Text="{Binding Account}"
+            Placeholder="請輸入帳號"/>
+        <Label
+            Text="帳號欄位一定要有輸入值，請輸入帳號"
+            FontSize="20" TextColor="Red"
+            IsVisible="{Binding Account, Converter={StaticResource StringToBooleanInvertConverter}}"
+            />
+        <Button
+            Text="提交"
+            IsEnabled="{Binding Account, Converter={StaticResource StringToBooleanConverter}}"/>
+        <Label
+            FontSize="14"
+            Text="體驗 ConvertBack"/>
+        <Entry
+            Placeholder="請輸入 A 或者 B 或者 C"
+            Text="{Binding MyCounter, Converter={StaticResource NumberToAlphabetConverter}}"
+            HorizontalOptions="Fill" VerticalOptions="Start"/>
+        <Label
+            Text="{Binding MyCounter, StringFormat='ViewModel 內的值為 {0}'}"/>
+    </StackLayout>
+
+</ContentPage>
