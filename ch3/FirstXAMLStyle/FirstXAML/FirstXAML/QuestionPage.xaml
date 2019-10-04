@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FirstXAML.QuestionPage">
+
+    <StackLayout>
+        <Label
+            Text="數值1"/>
+        <Label
+            x:Name="lbValue1"
+            Style="{StaticResource QuestionLabel}"/>
+        <Label
+            Text="數值2"/>
+        <Label
+            x:Name="lbValue2"
+            Style="{StaticResource QuestionLabel}"/>
+        <Label
+            Text="問題"/>
+        <Label
+            x:Name="lbQuestion"
+            Style="{StaticResource QuestionTitleLabel}"/>
+        <Label
+            Text="答案"/>
+        <Entry
+            x:Name="entAnswer"
+            Keyboard="Numeric"/>
+        <StackLayout
+            Orientation="Horizontal">
+            <Button
+                x:Name="btnReQuestion"
+                Text="產生問題"/>
+            <Button
+                x:Name="btnSubmit"
+                Text="提交"/>
+
+        </StackLayout>
+        <Label
+            x:Name="lbMessage"
+            Style="{StaticResource MessageLabel}"/>
+    </StackLayout>
+
+</ContentPage>
