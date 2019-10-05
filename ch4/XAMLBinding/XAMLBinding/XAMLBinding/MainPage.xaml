@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:XAMLBinding"
+             mc:Ignorable="d"
+             x:Class="XAMLBinding.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="ResourceString">來自資源字典的物件值</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="使用 Source 變更綁定來源" 
+               BackgroundColor="Black"
+               TextColor="White" FontSize="30"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand"/>
+        <Label Text="請輸入你的姓名"
+               FontSize="14"/>
+        <Entry x:Name="entry"/>
+        <Label Text="{Binding Text, Source={Reference entry}}"/>
+        <Label Text="{Binding Path=Text, Source={x:Reference entry}}"/>
+        <Label Text="{StaticResource ResourceString}"/>
+        <Label Text="{x:StaticResource ResourceString}"/>
+        <Label Text="{Static local:CLRClass.CLRProperty}"/>
+        <Label Text="{x:Static local:CLRClass.CLRProperty}"/>
+
+        <Label Text="使用 BindingContext" 
+               BackgroundColor="Black"
+               TextColor="White" FontSize="30"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand"/>
+        <Stepper x:Name="stepper"
+                Value="50.0"
+                Minimum="1.0" Maximum="200.0"/>
+        <Label Text="{Binding Path=Value, Source={Reference stepper}, StringFormat='輸入數值 : {0}'}"/>
+        <BoxView BindingContext="{Binding Source={Reference stepper}}"
+                 Color="Red"
+                 WidthRequest="{Binding Value}"
+                 HeightRequest="{Binding Value}"
+                 HorizontalOptions="Center"
+                 />
+    </StackLayout>
+
+</ContentPage>
