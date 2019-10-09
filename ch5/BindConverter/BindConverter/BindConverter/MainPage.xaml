@@ -24,7 +24,6 @@
             FontSize="14"
             Text="帳號"/>
         <Entry
-            x:Name="entAccount"
             Text="{Binding Account}"
             Placeholder="請輸入帳號"/>
         <Label
