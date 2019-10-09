@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace MVVMBase
 {
-    public class MyBindingContext: ViewModelBase
+    public class MyBindingContext : ViewModelBase
     {
         #region 姓名的屬性
         private string name;
@@ -13,13 +13,7 @@ namespace MVVMBase
         public string Name
         {
             get { return name; }
-            set
-            {
-                if (name != value)
-                {
-                    SetProperty(ref name, value); 
-                }
-            }
+            set { SetProperty(ref name, value); }
         }
         #endregion
 
@@ -29,13 +23,7 @@ namespace MVVMBase
         public int Age
         {
             get { return age; }
-            set
-            {
-                if (age != value)
-                {
-                    SetProperty(ref age, value);
-                }
-            }
+            set { SetProperty(ref age, value); }
         }
         #endregion
 
@@ -45,13 +33,7 @@ namespace MVVMBase
         public Color MyColor
         {
             get { return myColor; }
-            set
-            {
-                if (myColor != value)
-                {
-                    SetProperty(ref myColor, value);
-                }
-            }
+            set { SetProperty(ref myColor, value); }
         }
         #endregion
 
@@ -61,13 +43,7 @@ namespace MVVMBase
         public string Message
         {
             get { return message; }
-            set
-            {
-                if (message != value)
-                {
-                    SetProperty(ref message, value);
-                }
-            }
+            set { SetProperty(ref message, value); }
         }
         #endregion
     }
