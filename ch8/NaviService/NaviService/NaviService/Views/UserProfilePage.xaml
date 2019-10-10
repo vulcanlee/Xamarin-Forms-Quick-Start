@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:NaviService.ViewModels"
+             viewModel:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             x:Class="NaviService.Views.UserProfilePage"
+             Title="使用者設定資訊"
+             BackgroundColor="LightBlue">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Fill" VerticalOptions="Center">
+            <StackLayout
+                Margin="20,0"
+                >
+                <Label Text="上頁傳入進來參數" FontSize="14"/>
+                <Label Text="{Binding PreNaviPara}" FontSize="18" TextColor="Blue"/>
+                <Label Text="前頁傳入進來參數" FontSize="14"/>
+                <Label Text="{Binding BackNaviPara}" FontSize="18" TextColor="Blue"/>
+                <Label Text="傳入下頁參數" FontSize="14"/>
+                <Entry Text="{Binding NaviPara}"/>
+                <Button Text="導航到下頁" Command="{Binding GoNextCommand}"/>
+                <Label Text="傳回前頁參數" FontSize="14"/>
+                <Entry Text="{Binding BackNaviPara}"/>
+                <Button Text="回前一頁" Command="{Binding GoPreCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
