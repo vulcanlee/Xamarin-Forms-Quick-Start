@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:behavior="clr-namespace:Event2Command.Behaviors"
+             xmlns:local="clr-namespace:Event2Command"
+             mc:Ignorable="d"
+             x:Class="Event2Command.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MyBindingContext/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="請設定 BoxView 大小"/>
+        <Slider
+            MaximumTrackColor="Blue"
+            MinimumTrackColor="Blue"
+            ThumbColor="HotPink"
+            Value="{Binding SliderValue}"
+            >
+            <Slider.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="ValueChanged"
+                    Command="{Binding SliderChangeCommand}"
+                    />
+            </Slider.Behaviors>
+        </Slider>
+        <Label Text="{Binding SliderValue}"/>
+        <BoxView
+            Color="HotPink"
+            HorizontalOptions="Center" VerticalOptions="Center"
+            WidthRequest="{Binding CurrentValue}"
+            HeightRequest="{Binding CurrentValue}"/>
+    </StackLayout>
+
+</ContentPage>
