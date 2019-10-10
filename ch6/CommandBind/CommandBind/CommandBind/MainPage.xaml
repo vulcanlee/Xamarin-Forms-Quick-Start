@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:CommandBind"
+             mc:Ignorable="d"
+             x:Class="CommandBind.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MyBindingContext/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>        
+        <Label Text="請選擇要執行的功能" />
+        <StackLayout
+            Orientation="Horizontal">
+            <Button Text="去旅行"
+                Command="{Binding DoWhatCommand}"
+                CommandParameter="去旅行"/>
+            <Button x:Name="btn" Text="買東西"
+                Command="{Binding DoWhatCommand}"
+                CommandParameter="{Binding Text, Source={Reference btn}}"/>
+            <Button Text="吃甜點"
+                Command="{Binding DoWhatCommand}"
+                CommandParameter="{Binding BtnText}"/>
+        </StackLayout>
+        <Label Text="{Binding DoSomething}"
+               FontSize="24"
+               TextColor="Red"/>
+        <Entry Text="{Binding Password}"
+               IsPassword="True"
+               />
+        <Button Text="變更密碼"
+                Command="{Binding ChangePasswordCommand}"/>
+        <Label Text="{Binding Message}"
+               FontSize="24"
+               TextColor="Red"/>
+
+
+    </StackLayout>
+
+</ContentPage>
