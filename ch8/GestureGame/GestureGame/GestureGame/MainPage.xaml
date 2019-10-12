@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModel="clr-namespace:GestureGame.ViewModels"
+             xmlns:local="clr-namespace:GestureGame"
              mc:Ignorable="d"
              x:Class="GestureGame.MainPage">
 
     <ContentPage.BindingContext>
-        <viewModel:MainPageViewModel/>
+        <local:MyBindingContext/>
     </ContentPage.BindingContext>
 
     <StackLayout>
@@ -45,7 +45,9 @@
                 Color="Green">
                 <BoxView.GestureRecognizers>
                     <TapGestureRecognizer
-                    Command="{Binding TapCommand}" CommandParameter="你點選了綠色區塊"/>
+                        Command="{Binding TapCommand}" CommandParameter="你點選了綠色區塊"
+                        NumberOfTapsRequired="2"
+                        />
                 </BoxView.GestureRecognizers>
             </BoxView>
             <BoxView
