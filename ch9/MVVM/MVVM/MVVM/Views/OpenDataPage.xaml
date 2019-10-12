@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodel="clr-namespace:MVVM.ViewModels"
+             xmlns:behavior="clr-namespace:MVVM.Behaviors"
+             xmlns:converter="clr-namespace:MVVM.Converters"
+             viewmodel:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             x:Class="MVVM.Views.OpenDataPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BoolInvertConvert x:Key="BoolInvertConvert"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid
+                IsVisible="{Binding IsShowDetail, Converter={StaticResource BoolInvertConvert}}"
+                >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Button Text="更新" Command="{Binding ReloadCommand}"/>
+                    <SearchBar Text="{Binding Keyword}" 
+                               SearchCommand="{Binding SearchKeyworkCommand}"
+                               HorizontalOptions="Fill"/>
+                </StackLayout>
+                <ListView Grid.Row="1"
+                          Margin="10"
+                          ItemsSource="{Binding OpenDataItems}"
+                          SelectedItem="{Binding OpenDataSelectedItem}"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="None"
+                          >
+                    <ListView.Behaviors>
+                        <behavior:EventToCommandBehavior
+                            EventName="ItemTapped"
+                            Command="{Binding ItemTappedCommand}"/>
+                    </ListView.Behaviors>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <BoxView Color="White"/>
+                                    <StackLayout>
+                                        <Label Text="{Binding 創業空間名稱}" FontSize="18"/>
+                                        <Label Text="{Binding 地址}" FontSize="14"/>
+                                        <BoxView Color="LightGreen"
+                                                 HeightRequest="2"
+                                                 HorizontalOptions="Fill" VerticalOptions="End"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid
+                IsVisible="{Binding IsShowDetail}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Row="0" Grid.RowSpan="2"
+                         Color="Blue"
+                         Opacity="0.2"/>
+                <Grid Grid.Row="0">
+                    <BoxView Color="Black"/>
+                    <Label Text=" X " TextColor="White"
+                           FontSize="30"
+                           HorizontalOptions="End" VerticalOptions="Center"
+                           >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding CloseDetailCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <ScrollView Grid.Row="1">
+                    <StackLayout>
+                        <Label Text="創業空間名稱" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.創業空間名稱}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="所屬單位" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.所屬單位}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="創業空間類型" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.創業空間類型}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="招募團隊類型" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.招募團隊類型}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="座標經度" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.座標經度}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="座標緯度" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.座標緯度}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="空間用途" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.空間用途}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="縣市區域" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.縣市區域}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="地址" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.地址}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="連絡電話" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.連絡電話}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="聯絡email" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.聯絡email}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="官方網站" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.官方網站}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="使用坪數" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.使用坪數}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="使用時間" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.使用時間}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="建立時間" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.建立時間, StringFormat='{0:yyyy-MM-dd}'}" FontSize="20"
+                               TextColor="Purple"/>
+                        <Label Text="修改時間" FontSize="14"/>
+                        <Label Text="{Binding OpenDataSelectedItem.修改時間, StringFormat='{0:yyyy-MM-dd}'}" FontSize="20"
+                               TextColor="Purple"/>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
