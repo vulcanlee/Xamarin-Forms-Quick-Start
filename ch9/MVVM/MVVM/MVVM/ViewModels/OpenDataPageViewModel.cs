@@ -13,7 +13,7 @@ namespace MVVM.ViewModels
     public class OpenDataPageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public string Keyword { get; set; } = "123";
+        public string Keyword { get; set; } = "";
         public bool IsShowDetail { get; set; } = false;
         public Command ReloadCommand { get; set; }
         public Command SearchKeyworkCommand { get; set; }
