@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6EE3DF8D-87BC-4D70-ACD7-535C67BA7D72}</ProjectGuid>
+    <ProjectGuid>{C999CF4B-E38B-453A-A3D3-8612D2447F5C}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -126,7 +126,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\StatusBars\StatusBars.csproj">
-      <Project>{5E127479-2BEC-40BB-8B88-61D3EFCB2DB5}</Project>
+      <Project>{7385BCF3-B3F7-4916-B64E-DEAC4B76BF7C}</Project>
       <Name>StatusBars</Name>
     </ProjectReference>
   </ItemGroup>

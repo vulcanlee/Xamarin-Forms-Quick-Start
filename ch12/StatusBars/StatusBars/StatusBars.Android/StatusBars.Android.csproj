@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0DB4DF39-6954-4860-8C32-E9C7F207C1E8}</ProjectGuid>
+    <ProjectGuid>{696A4C34-2E95-4C6B-B22D-FAC2D6427299}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StatusBars\StatusBars.csproj">
-      <Project>{5E127479-2BEC-40BB-8B88-61D3EFCB2DB5}</Project>
+      <Project>{7385BCF3-B3F7-4916-B64E-DEAC4B76BF7C}</Project>
       <Name>StatusBars</Name>
     </ProjectReference>
   </ItemGroup>

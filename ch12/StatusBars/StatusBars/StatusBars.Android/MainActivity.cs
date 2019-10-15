@@ -36,7 +36,6 @@ namespace StatusBars.Droid
                     activity.Window.AddFlags(WindowManagerFlags.Fullscreen);
                 }
             });
-
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
