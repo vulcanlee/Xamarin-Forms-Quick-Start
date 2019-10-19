@@ -12,9 +12,14 @@ namespace NaviService.ViewModels
         public string BackNaviPara { get; set; } = "";
         public string NaviPara { get; set; } = "";
         public Command GoNextCommand { get; set; }
+        public Command GoSelfCommand { get; set; }
         public Command GoPreCommand { get; set; }
         public UserProfilePageViewModel()
         {
+            GoSelfCommand = new Command(() =>
+            {
+                NavigationService.NavigateToAsync<UserProfilePageViewModel>(NaviPara);
+            });
             GoNextCommand = new Command(() =>
             {
                 NavigationService.NavigateToAsync<AboutPageViewModel>(NaviPara);

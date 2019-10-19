@@ -25,6 +25,8 @@ namespace NaviService.Helpers
 
         Task RemoveBackStackAsync();
 
+        Task RemoveNoneRootAsync();
+
         Task GoBackAsync();
 
         Task GoBackAsync(object parameter);

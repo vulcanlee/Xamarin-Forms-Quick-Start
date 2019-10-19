@@ -22,6 +22,7 @@
                 <Label Text="傳入下頁參數" FontSize="14"/>
                 <Entry Text="{Binding NaviPara}"/>
                 <Button Text="導航到下頁" Command="{Binding GoNextCommand}"/>
+                <!--<Button Text="導航到Self" Command="{Binding GoSelfCommand}"/>-->
                 <Label Text="傳回前頁參數" FontSize="14"/>
                 <Entry Text="{Binding BackNaviPara}"/>
                 <Button Text="回前一頁" Command="{Binding GoPreCommand}"/>

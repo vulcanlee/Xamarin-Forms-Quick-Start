@@ -58,15 +58,35 @@ namespace NaviService.Helpers
             return Task.FromResult(true);
         }
 
+        public Task RemoveNoneRootAsync()
+        {
+            var mainPage = Application.Current.MainPage as NaviPage;
+
+            if (mainPage != null)
+            {
+                var needStackLength = mainPage.Navigation.NavigationStack.Count - 2;
+
+                for (int i = 0; i < needStackLength; i++)
+                {
+                    var page = mainPage.Navigation.NavigationStack[1];
+                    mainPage.Navigation.RemovePage(page);
+                }
+            }
+
+            return Task.FromResult(true);
+        }
+
         public Task RemoveBackStackAsync()
         {
             var mainPage = Application.Current.MainPage as NaviPage;
 
             if (mainPage != null)
             {
-                for (int i = 0; i < mainPage.Navigation.NavigationStack.Count - 1; i++)
+                var needStackLength = mainPage.Navigation.NavigationStack.Count - 2;
+
+                for (int i = 0; i < needStackLength; i++)
                 {
-                    var page = mainPage.Navigation.NavigationStack[i];
+                    var page = mainPage.Navigation.NavigationStack[0];
                     mainPage.Navigation.RemovePage(page);
                 }
             }

@@ -16,7 +16,7 @@ namespace NaviService.ViewModels
         {
             GoRootCommand = new Command(() =>
             {
-                NavigationService.RemoveLastFromBackStackAsync();
+                NavigationService.RemoveNoneRootAsync();
                 NavigationService.GoBackAsync(BackNaviPara);
             });
             GoPreCommand = new Command(() =>

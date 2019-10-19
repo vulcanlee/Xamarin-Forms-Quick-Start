@@ -21,7 +21,7 @@ namespace NaviService.ViewModels
         }
         public override Task InitializeAsync(object navigationData)
         {
-            PageName = "登入頁面(ViewModel 初始自動設定)";
+            PageName = "首頁頁面(ViewModel 初始自動設定)";
             return base.InitializeAsync(navigationData);
         }
         public override Task ComeBackAsync(object navigationData)
