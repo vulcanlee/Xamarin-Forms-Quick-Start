@@ -1,5 +1,7 @@
 #  Xamarin.Forms 快速入門
 
+![](Cover.png)
+
 ##  關於本書
 
 這是一本帶領 Xamarin.Forms 新手開發者，可以透過書中介紹的各種知識、開發技能，配合練習專案實作，快速地學會使用 Xamarin.Forms 這個 UI Toolkit 來進行跨平台的行動應用裝置之應用程式開發工作。
