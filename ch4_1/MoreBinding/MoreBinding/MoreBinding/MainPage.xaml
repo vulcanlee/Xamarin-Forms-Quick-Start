@@ -12,20 +12,22 @@
     </ContentPage.BindingContext>
 
     <ScrollView>
+
         <!--在這個練習專案中，將會學習各種資料綁定 Data Binding 的方法與技巧-->
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-            <!--資料綁定的模式 單向或者雙向差異-->
+            <!--用法1: 資料綁定的模式 單向或者雙向差異-->
             <Entry Text="{Binding Message1}"/>
             <Label Text="{Binding Message1, StringFormat='(雙向綁定)輸入的內容:{0}'}"/>
             <Entry Text="{Binding Message2, Mode=OneWay}"/>
             <Label Text="{Binding Message2, StringFormat='(單向綁定)輸入的內容:{0}'}"/>
 
-            <!--深層資料繫節-->
+            <!--用法2: 深層資料繫節-->
             <Label Text="{Binding Path=MyItemObject.FirstName}" />
             <Label Text="{Binding Path=MyItemObject.MySubItemData.FirstName}" />
             <Label Text="{Binding MyItemObject.MySubItemData.FirstName}" />
 
+            <!--用法3: 不同指定綁定屬性用法-->
             <!--將 Text 屬性(Attribute)，綁定到 ViewModel 中的 Title 屬性(Property)-->
             <Label x:Name="label" Text="{Binding Title}" />
             <!--使用 Path 指定綁定的路徑，Binding後沒有指定，表示從 BindingContext開始-->
@@ -43,16 +45,18 @@
             <!--直接設定該控制項的BindingContext來源為某個控制項，裡面的屬性，就可以直接進行綁定-->
             <Label BindingContext="{Binding Source={x:Reference label}}" Text="{Binding Text}" />
 
-            <!--資料集合的資料綁定-->
+            <!--用法4: 資料集合的資料綁定-->
             <!--綁資料集合內的某筆資料-->
             <Label Text="{Binding MyItemList[1].FirstName}"/>
             <Label Text="{Binding Path=MyItemList[1].FirstName}"/>
-            <!--綁資料字典內的某筆資料-->
+            
+            <!--用法5: 綁資料字典內的某筆資料-->
             <Label Text="{Binding Dict[item3]}"/>
 
-            <!--將 Text 屬性(Attribute)，綁定到 ViewModel 中的 Title 屬性(Property)-->
+            <!--用法6: 輔助支援用法-->
+            <!--FallbackValue 取得或設定當繫結無法傳回值時要用的值-->
             <Label Text="{Binding title, FallbackValue='title 不存在'}" />
-            <!--將 Text 屬性(Attribute)，綁定到 ViewModel 中的 Title 屬性(Property)-->
+            <!--TargetNullValue 取得或設定當來源值為 null 時目標中所使用的值。-->
             <Label Text="{Binding NullTitle, TargetNullValue='NullTitle 為空值'}" />
         </StackLayout>
     </ScrollView>

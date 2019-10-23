@@ -25,12 +25,12 @@ namespace MoreBinding
         public event PropertyChangedEventHandler PropertyChanged;
         public string Title { get; set; }
         public MyItem MyItemObject { get; set; }
-        public ObservableCollection<MyItem> MyItemList { get; set; } = new ObservableCollection<MyItem>();
+        public List<MyItem> MyItemList { get; set; } = new List<MyItem>();
         public string NullTitle { get; set; }
         public string Message1 { get; set; }
         public string Message2 { get; set; }
 
-        public Dictionary<string, int> Dict { get; set; }
+        public Dictionary<string, int> Dict { get; set; } = new Dictionary<string, int>();
 
         public MyBindingContext()
         {
@@ -46,17 +46,14 @@ namespace MoreBinding
                 }
             };
 
-            MyItemList = new ObservableCollection<MyItem>();
             MyItemList.Add(new MyItem() { FirstName = "FN1", LastName = "LN1" });
             MyItemList.Add(new MyItem() { FirstName = "FN2", LastName = "LN2" });
             MyItemList.Add(new MyItem() { FirstName = "FN3", LastName = "LN3" });
 
-            Dict = new Dictionary<string, int>();
             Dict.Add("item1", 100);
             Dict.Add("item2", 120);
             Dict.Add("item3", 140);
             Dict.Add("item4", 160);
-
         }
     }
 }
