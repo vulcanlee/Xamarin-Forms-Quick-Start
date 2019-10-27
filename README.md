@@ -90,8 +90,9 @@
 
 # 練習專案說明
 
-|專案名稱|專案說明|備註|
+|第幾章|介紹內容說明|練習專案|
 |-|-|-|
+|ch1|Visual Studio 2019 for Xamarin 開發環境之安裝與設定||
 |ch2|使用 C# 程式語言來直接開發 Xamarin.Forms App||
 |ch3|使用 XAML 標記宣告語言來開發 Xamarin.Forms App||
 |ch4|資料綁定 Data Binding||
@@ -105,8 +106,4 @@
 |ch10_2|導航服務之封裝設計||
 |ch11|相依服務 Dependency Service||
 |ch12|訊息中心 MessagingCenter||
-||||
-
-
-
 
