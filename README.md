@@ -92,18 +92,18 @@
 
 |第幾章|介紹內容說明|練習專案|
 |-|-|-|
-|ch1|Visual Studio 2019 for Xamarin 開發環境之安裝與設定||
-|ch2|使用 C# 程式語言來直接開發 Xamarin.Forms App||
-|ch3|使用 XAML 標記宣告語言來開發 Xamarin.Forms App||
-|ch4|資料綁定 Data Binding||
-|ch4_1|更多資料綁定的用法 Data Binding||
-|ch5|數值轉換器 Value Converter||
-|ch6|命令綁定 Command Binding||
-|ch7|事件轉命令行為 Event to Command Behavior||
-|ch8|手勢操作 Gesture Recognizer||
-|ch9|MVVM Model-View-ViewModel 設計模式||
-|ch10_1|內建導航服務||
-|ch10_2|導航服務之封裝設計||
-|ch11|相依服務 Dependency Service||
-|ch12|訊息中心 MessagingCenter||
+|ch1|Visual Studio 2019 for Xamarin 開發環境之安裝與設定|MyApp|
+|ch2|使用 C# 程式語言來直接開發 Xamarin.Forms App|FirstCS|
+|ch3|使用 XAML 標記宣告語言來開發 Xamarin.Forms App|FirstXAML , FirstXAMLBasic , FirstXAMLCP , FirstXAMLStyle|
+|ch4|資料綁定 Data Binding|Traditional , XAMLBinding , MVVMBase , FodyBase|
+|ch4_1|更多資料綁定的用法 Data Binding|MoreBinding|
+|ch5|數值轉換器 Value Converter|BindConverter|
+|ch6|命令綁定 Command Binding|CommandBind|
+|ch7|事件轉命令行為 Event to Command Behavior|Event2Command|
+|ch8|手勢操作 Gesture Recognizer|GestureGame|
+|ch9|MVVM Model-View-ViewModel 設計模式|MVVM , MVVMPattern|
+|ch10_1|內建導航服務|NaviBasic|
+|ch10_2|導航服務之封裝設計|NaviService|
+|ch11|相依服務 Dependency Service|PlatformInfo|
+|ch12|訊息中心 MessagingCenter|StatusBars|
 
